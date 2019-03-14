@@ -48,7 +48,7 @@
                     </div>
                     <div class="form-group">
 
-                        <a href="#" class="ForgetPwd" value="Login">Forget Password?</a>
+                        <a href="#" class="ForgetPwd" value="Login">Create New Account</a>
                     </div>
                 </form>
             </div>
