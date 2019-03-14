@@ -14,3 +14,6 @@
 Route::get('/', function () {
     return view('login');
 });
+Route::get('/borrow', function () {
+    return view('borrow');
+});
