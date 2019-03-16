@@ -15,3 +15,6 @@ Route::get('/', function () {
     return view('dashboard');
 });
 Route::get('/borrow', 'BrwsAndRtnsController@allbook');
+Route::get('/return', function () {
+    return view('return');
+});
