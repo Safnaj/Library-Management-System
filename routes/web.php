@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('login');
+    return view('dashboard');
 });
 Route::get('/borrow', function () {
     return view('borrow');
