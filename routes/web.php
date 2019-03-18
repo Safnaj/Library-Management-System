@@ -14,3 +14,11 @@
 Route::get('/', function () {
     return view('dashboard');
 });
+
+Route::get('/addBook', function () {
+    return view('addBook');
+});
+
+Route::get('/categories', function () {
+    return view('categories');
+});
