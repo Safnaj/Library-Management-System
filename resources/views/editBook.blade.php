@@ -128,7 +128,7 @@
         @if(session('info'))
         <div class="alert alert-dismissible alert-success">
             {{session('info')}}
-        </div>
+        </div>        
         @endif
 
         <script>
@@ -149,74 +149,71 @@
           $('div.alert').delay(1500).slideUp(300);
         </script>
         <!--Error Message-->
-
-        <div class="row">
-          <!-- Area Chart -->
-          <div class="col-xl-12 col-lg-7">
-            <div class="card shadow mb-4">
-              <!-- Card Header - Dropdown -->
-              <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                <h6 class="m-0 font-weight-bold text-primary">Add Category</h6>                  
-              </div>
-              <!-- Card Body -->
-              <div class="card-body">
-                <form method="post" action="{{url('/addCategory')}}">
-                {{csrf_field()}}
-                    <fieldset>
-                      <div class="form-group">
-                            <label for="exampleInputEmail1">ID :</label>
-                            <input type="text" name="id" class="form-control" id="id" placeholder="Enter ID" >
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Category :</label>
-                            <input type="text" name="category" class="form-control" id="category" placeholder="Enter New Category" >
-                        </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </fieldset>
-                </form>                   
-              </div>
-            </div>
-              
-            <!-- Manage Category-->
-
+        
             <div class="row">
-            <div class="col-xl-12 col-lg-7">
-              <div class="card shadow mb-4">
-                <!-- Card Header - Dropdown -->
-                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary">Manage Categories</h6>                  
-                </div>
-                <!-- Card Body -->
-                <div class="card-body">
-                <table class="table table-hover">
-                  <thead>
-                  <tr>
-                      <th>ID</th>
-                      <th>Category</th>
-                      <th>Action</th>
-                  </tr>
-                  </thead>
-                  <tbody>
-                  @if(count($categories) > 0)
-                      @foreach($categories->all() as $category)
-                      <tr>
-                          <td>{{$category->id}}</td>
-                          <td>{{$category->category}}</td>                          
-                          <td>                  
-                              <a href='{{url("/deleteCategory/{$category->id}")}}' class="btn btn-sm btn-danger">Delete</a>
-                          </td>
-                      </tr>
-                      @endforeach
-                  @endif
-                  </tbody>
-              </table>           
+              <!-- Area Chart -->
+              <div class="col-xl-12 col-lg-7">
+                <div class="card shadow mb-4">
+                  <!-- Card Header - Dropdown -->
+                  <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-primary">Update Books</h6>                  
+                  </div>
+                  <!-- Card Body -->
+                  <div class="card-body">
+
+                      <form method="post" action="{{url('/manageBooks/update', array($books->id))}}">
+                        {{csrf_field()}}
+                        <fieldset>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Book ID :</label>
+                                <input type="text" name="bookID" class="form-control" id="bookID" value="<?php echo $books->id?>">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Title :</label>
+                                <input type="text" name="title" class="form-control" id="title" value="<?php echo $books->title?>">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Author :</label>
+                                <input type="text" name="author" class="form-control" id="author" value="<?php echo $books->author?>">
+                            </div>
+                            <!--DIV-->
+                            <div class="row">
+                              <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="category"><span class="FieldInfo">Category:</span></label>
+                                    <select class="form-control" id="category" name="category">
+                                    @if(count($categories) > 0)
+                                    @foreach($categories as $category)                            
+                                        <option value="{{$category->category}}">{{$category->category}}</option>
+                                    @endforeach
+                                    @endif
+                                    </select>
+                                </div>
+                              </div>
+                              <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">No Of Copies :</label>
+                                    <input type="text" name="noOfCopy" class="form-control" id="noOfCopy" value="<?php echo $books->noOfCopies?>">
+                                </div>                                                   
+                              </div>         
+                              <button type="submit" class="btn btn-primary">Update</button>                     
+                            </div>             
+                        </fieldset>
+                    </form>                            
+                  </div>
                 </div>
               </div>
-          </div>
-        </div>
-    </div>
-
           
+
+          <!-- Content Row -->
+          <div class="row">
+
+            <!-- Content Column -->
+            <div class="col-lg-6 mb-4">
+
+            </div>
+          </div>
+
         </div>
         <!-- /.container-fluid -->
 

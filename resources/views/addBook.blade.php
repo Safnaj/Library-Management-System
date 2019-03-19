@@ -124,45 +124,86 @@
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
-          <!-- Page Heading -->
-          <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Add Books</h1>
-          </div>
+        <!--Session Message-->
+        @if(session('info'))
+        <div class="alert alert-dismissible alert-success">
+            {{session('info')}}
+        </div>        
+        @endif
 
-    
-          <!-- Main body -->
+        <script>
+          $('div.alert').delay(1500).slideUp(300);
+        </script>
+        <!--Session Message-->
 
-          <div class="row"> <!-- justify-content-md-center-->
-            <div class="col-sm-10">
-                <div>
-                    <form method="post" action="{{url('/insert')}}">
+        <!--Error Message-->
+        @if (count($errors))
+        <div class="alert alert-dismissible alert-danger">
+            @foreach ($errors->all() as $error)
+            <li>{{$error}}</li>
+            @endforeach
+        </div>
+        @endif
+
+        <script>
+          $('div.alert').delay(1500).slideUp(300);
+        </script>
+        <!--Error Message-->
+        
+            <div class="row">
+              <!-- Area Chart -->
+              <div class="col-xl-12 col-lg-7">
+                <div class="card shadow mb-4">
+                  <!-- Card Header - Dropdown -->
+                  <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-primary">Add Books</h6>                  
+                  </div>
+                  <!-- Card Body -->
+                  <div class="card-body">
+
+                      <form method="post" action="{{url('/insertBook')}}">
+                        {{csrf_field()}}
                         <fieldset>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Book ID :</label>
-                                <input type="text" name="title" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Book ID">
+                                <input type="text" name="bookID" class="form-control" id="bookID" aria-describedby="emailHelp" placeholder="Enter Book ID">
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Title :</label>
-                                <input type="text" name="title" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Title">
+                                <input type="text" name="title" class="form-control" id="title" aria-describedby="emailHelp" placeholder="Enter Title">
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Author :</label>
-                                <input type="text" name="description" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Author's Name">
+                                <input type="text" name="author" class="form-control" id="author" aria-describedby="emailHelp" placeholder="Enter Author's Name">
                             </div>
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">Category :</label>
-                                <input type="text" name="description" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Category">
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">No Of Copies :</label>
-                                <input type="text" name="description" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Number of Copies">
-                            </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <!--DIV-->
+                            <div class="row">
+                              <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="category"><span class="FieldInfo">Category:</span></label>
+                                    <select class="form-control" id="category" name="category">
+                                    @if(count($categories) > 0)
+                                    @foreach($categories as $category)                            
+                                        <option value="{{$category->category}}">{{$category->category}}</option>
+                                    @endforeach
+                                    @endif
+                                    </select>
+                                </div>
+                              </div>
+                              <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">No Of Copies :</label>
+                                    <input type="text" name="noOfCopy" class="form-control" id="noOfCopy" aria-describedby="emailHelp" placeholder="Enter Number of Copies">
+                                </div>                                                   
+                              </div>         
+                              <button type="submit" class="btn btn-primary">Submit</button>                     
+                            </div>             
                         </fieldset>
-                    </form>
+                    </form>                            
+                  </div>
                 </div>
-            </div>
-          </div>
+              </div>
+          
 
           <!-- Content Row -->
           <div class="row">
