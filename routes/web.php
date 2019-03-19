@@ -14,7 +14,12 @@
 Route::get('/', function () {
     return view('dashboard');
 });
-Route::get('/borrow', 'BrwsAndRtnsController@allbook');
+// Route::get('/borrow', 'BrwsAndRtnsController@allbook');
+Route::get('/borrow', 'BrwsAndRtnsController@index');
+Route::post('/insert','BrwsAndRtnsController@add');
+Route::get('/borrow/action', 'BrwsAndRtnsController@action')->name('borrow.action');
+Route::get('/borrow/searchmember', 'BrwsAndRtnsController@searchmember')->name('borrow.searchmember');
+
 Route::get('/return', function () {
     return view('return');
 });
