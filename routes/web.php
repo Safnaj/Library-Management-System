@@ -27,7 +27,7 @@ Route::get('/deleteBook/{id}', 'BookController@deleteBook');
 Route::post('/manageBooks/update/{id}', 'BookController@editBook');
 
 
-// Route::get('/borrow', 'BrwsAndRtnsController@allbook');
+// from aashif
 
 Route::get('/borrow', 'BrwsAndRtnsController@index');
 

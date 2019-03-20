@@ -18,7 +18,7 @@ class BrwsAndRtnsController extends Controller
 
     public function add(Request $request){
       $this->validate($request, [
-          'bid' => 'required',
+          'bookId' => 'required',
           'mid' => 'required'
       ]);
 
@@ -26,7 +26,7 @@ class BrwsAndRtnsController extends Controller
       $date = Carbon::now()->toDateTimeString();
       $trialExpires = $date1->addDays(7);
       $borrows = new Borrow;
-      $borrows->bid = $request->input('bid');
+      $borrows->bid = $request->input('bookId');
       $borrows->mid = $request->input('mid');
       $borrows->borrowed_at = $date;
       $borrows->due_date = $trialExpires;
@@ -44,17 +44,18 @@ class BrwsAndRtnsController extends Controller
       if($query != '')
       {
        $data = DB::table('books')
-         ->where('bid', 'like', '%'.$query.'%')
-         ->orWhere('bookname', 'like', '%'.$query.'%')
+         ->where('bookId', 'like', '%'.$query.'%')
+         ->orWhere('title', 'like', '%'.$query.'%')
          ->orWhere('author', 'like', '%'.$query.'%')
-         ->orderBy('bid', 'desc')
+         ->orWhere('category', 'like', '%'.$query.'%')
+         ->orderBy('bookId', 'desc')
          ->get();
          
       }
       else
       {
        $data = DB::table('books')
-         ->orderBy('bid', 'desc')
+         ->orderBy('bookId', 'desc')
          ->get();
       }
       $total_row = $data->count();
@@ -64,10 +65,10 @@ class BrwsAndRtnsController extends Controller
        {
         $output .= '
         <tr>
-         <td>'.$row->bid.'</td>
-         <td>'.$row->bookname.'</td>
+         <td>'.$row->bookId.'</td>
+         <td>'.$row->title.'</td>
          <td>'.$row->author.'</td>
-         <td>'.$row->no_of_copies.'</td>
+         <td>'.$row->category.'</td>
          <td class="text-center"><button type="button" class="btn btn-outline-info btn-sm">Select</button> </td>
         </tr>
         ';
