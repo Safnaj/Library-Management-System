@@ -42,10 +42,9 @@
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-          <a class="collapse-item" href="buttons.html">Search Book</a>
-            <a class="collapse-item" href="buttons.html">Add Book</a>
-            <a class="collapse-item" href="cards.html">Delete Book</a>
-            <a class="collapse-item" href="cards.html">Update Book</a>
+            <a class="collapse-item" href="{{ url('/addBook') }}">Add Books</a>
+            <a class="collapse-item" href="{{ url('/manageBook') }}">Manage Books</a>
+            <a class="collapse-item" href="{{ url('/categories') }}">Categories</a>
           </div>
         </div>
       </li>
@@ -82,11 +81,6 @@
 
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">
-
-      <!-- Sidebar Toggler (Sidebar) -->
-      <div class="text-center d-none d-md-inline">
-        <button class="rounded-circle border-0" id="sidebarToggle"></button>
-      </div>
 
     </ul>
     <!-- End of Sidebar -->
