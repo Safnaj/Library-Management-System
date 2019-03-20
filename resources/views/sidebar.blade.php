@@ -15,16 +15,27 @@
 
       <!--Dashboard-->
       <li class="nav-item">
+<<<<<<< HEAD
         <a class="nav-link" href="{{ url('/dashboard')}}">
+=======
+        <a class="nav-link" href="{{ url('/') }}">
+>>>>>>> 0bd789a3cb7e03f3c120e6c55f35e9cc199a30c1
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
 
-      <!--Reserved Books-->
+      <!--Lend & Return Books-->
       <li class="nav-item">
-        <a class="nav-link" href="tables.html">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseo" aria-expanded="true" aria-controls="collapseo">
           <i class="fas fa-fw fa-book"></i>
-          <span>Lend a Book</span></a>
+          <span>Lend & Return Books</span>
+        </a>
+        <div id="collapseo" class="collapse" aria-labelledby="headingo" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+          <a class="collapse-item" href="{{ url('/borrow') }}">Lend a Book</a>
+            <a class="collapse-item" href="{{ url('/return') }}">Return a Book</a>
+          </div>
+        </div>
       </li>
 
       <!-- Book Management -->
