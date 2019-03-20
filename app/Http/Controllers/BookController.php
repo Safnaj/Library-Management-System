@@ -22,7 +22,7 @@ class BookController extends Controller
     //Add Method
     public function addBook(Request $request){
         $this->validate($request,[
-            'bookID' => 'required | numeric',
+            'bookID' => 'required | numeric | unique:books,bookId',
             'title' => 'required | string',
             'author' => 'required | string',
             'category' => 'required',
@@ -49,7 +49,7 @@ class BookController extends Controller
     //Edit & Update
     public function editBook(Request $request, $id){
         $this->validate($request,[
-            'bookID' => 'required | numeric',
+            'bookID' => 'required | numeric | unique:books,bookId',
             'title' => 'required | string',
             'author' => 'required | string',
             'category' => 'required',
@@ -73,5 +73,7 @@ class BookController extends Controller
         return redirect('manageBook')->with('info','Book Deleted Successfully..!');
     }
 
-
+    //Search Book using AJAX
+   
 }
+

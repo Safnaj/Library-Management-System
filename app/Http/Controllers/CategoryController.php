@@ -21,7 +21,7 @@ class CategoryController extends Controller
     //Add Method
     public function addCategory(Request $request){
         $this->validate($request,[
-            'id' => 'required | numeric',
+            'id' => 'required | numeric | unique:categories,id',
             'category' => 'required | regex:/^[a-zA-Z]+$/u'
         ]);
         //Getting Data from HTML Form and Inserting to DB
