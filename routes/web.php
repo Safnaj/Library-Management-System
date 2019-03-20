@@ -4,6 +4,7 @@ Route::get('/', function () {
     return view('dashboard');
 });
 
+
 Route::get('/addBook', function () {
     return view('addBook');
 });
@@ -25,3 +26,4 @@ Route::get('/updateBook/{id}', 'BookController@updateBook');
 Route::get('/deleteBook/{id}', 'BookController@deleteBook');
 
 Route::post('/manageBooks/update/{id}', 'BookController@editBook');
+
