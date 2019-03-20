@@ -15,11 +15,7 @@
 
       <!--Dashboard-->
       <li class="nav-item">
-<<<<<<< HEAD
         <a class="nav-link" href="{{ url('/dashboard')}}">
-=======
-        <a class="nav-link" href="{{ url('/') }}">
->>>>>>> 0bd789a3cb7e03f3c120e6c55f35e9cc199a30c1
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
