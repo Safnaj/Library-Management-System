@@ -49,7 +49,7 @@ class BookController extends Controller
     //Edit & Update
     public function editBook(Request $request, $id){
         $this->validate($request,[
-            'bookID' => 'required | numeric | unique:books,bookId',
+            'bookID' => 'required | numeric',
             'title' => 'required | string',
             'author' => 'required | string',
             'category' => 'required',
