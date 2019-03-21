@@ -19,7 +19,7 @@ class BrwsAndRtnsController extends Controller
     public function add(Request $request){
       $this->validate($request, [
           'bookId' => 'required',
-          'mid' => 'required'
+          'MemberID' => 'required'
       ]);
 
       $date1 = Carbon::now();
@@ -27,7 +27,7 @@ class BrwsAndRtnsController extends Controller
       $trialExpires = $date1->addDays(7);
       $borrows = new Borrow;
       $borrows->bid = $request->input('bookId');
-      $borrows->mid = $request->input('mid');
+      $borrows->mid = $request->input('MemberID');
       $borrows->borrowed_at = $date;
       $borrows->due_date = $trialExpires;
       $borrows->save();
