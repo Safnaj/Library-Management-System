@@ -37,6 +37,8 @@ Route::get('/borrow/action', 'BrwsAndRtnsController@action')->name('borrow.actio
 
 Route::get('/borrow/searchmember', 'BrwsAndRtnsController@searchmember')->name('borrow.searchmember');
 
+Route::get('/viewborrow', 'BrwsAndRtnsController@getBorrow');
+
 Route::get('/return', function () {
     return view('return');
 });

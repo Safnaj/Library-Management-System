@@ -148,11 +148,10 @@ class BrwsAndRtnsController extends Controller
      }
     }
 
-
-
-
-    public function allbook(){
-        $books = Book::all();
-        return view('borrow',['books' => $books]);
+   public function getBorrow(){
+        $borrows = Borrow::all();
+        return view('viewborrow',['borrows' => $borrows]);
     }
+
+
 }
