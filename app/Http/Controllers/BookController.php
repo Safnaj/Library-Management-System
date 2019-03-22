@@ -22,7 +22,7 @@ class BookController extends Controller
     //Add Method
     public function addBook(Request $request){
         $this->validate($request,[
-            'bookID' => 'required | numeric | unique:books,bookId',
+            'bookID' => 'required | numeric | unique:books,id',
             'title' => 'required | string',
             'author' => 'required | string',
             'category' => 'required',
@@ -30,7 +30,7 @@ class BookController extends Controller
         ]);
         //Getting Data from HTML Form and Inserting to DB
         $book = new Book;
-        $book->bookID = $request->input('bookID');
+        $book->id = $request->input('bookID');
         $book->title = $request->input('title');
         $book->author = $request->input('author');
         $book->category = $request->input('category');
@@ -56,20 +56,20 @@ class BookController extends Controller
             'noOfCopy' => 'required | numeric'
         ]);
         $data = array(
-          'bookID' =>  $request->input('bookID'),
+          'id' =>  $request->input('bookID'),
           'title' =>  $request->input('title'),
           'author' =>  $request->input('author'),
           'category' =>  $request->input('category'),
           'noOfCopies' => $request->input('noOfCopy')
         );
         //Update
-        Book::where('bookID', $id)->update($data);
+        Book::where('id', $id)->update($data);
         return redirect('manageBook')->with('info','Book Updated Successfully..!');
     }
 
     //Delete Function
     public function deleteBook($id){
-        Book::where('bookID', $id)->delete();
+        Book::where('id', $id)->delete();
         return redirect('manageBook')->with('info','Book Deleted Successfully..!');
     }
 
