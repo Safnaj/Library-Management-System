@@ -31,17 +31,7 @@
             <!-- <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
           </div>
 
-          <!-- Topbar Search
-          <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-            <div class="input-group">
-              <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-              <div class="input-group-append">
-                <button class="btn btn-primary" type="button">
-                  <i class="fas fa-search fa-sm"></i>
-                </button>
-              </div>
-            </div>
-          </form> -->
+         
 
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
@@ -99,7 +89,7 @@
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Aashif Ahamed</span>
-                <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
+                <img class="img-profile rounded-circle" src="https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwidvcjos47hAhXCAnIKHe3wDV8QjRx6BAgBEAU&url=https%3A%2F%2Fwww.independent.co.uk%2Farts-entertainment%2Ffilms%2Fnews%2Fjohnny-depp-recalls-what-he-told-disney-bosses-confused-by-jack-sparrow-didnt-you-know-all-my-a6728081.html&psig=AOvVaw2lx775rse9i7Sr0OblkTxV&ust=1553091747218036">
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
@@ -131,12 +121,6 @@
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
-          <!-- Page Heading -->
-          <!-- <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Lend A Book</h1>
-            <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
-          </div> -->
-
         <!-- Content Row -->
         @if(session('info'))
             <div class="alert alert-success">
@@ -154,19 +138,6 @@
                 <div class="col-auto">
                       <i class="fas fa-book fa-1x text-gray-300"></i>
                     </div>
-                    <!-- dropdown in right conner -->
-                    <!-- <div class="dropdown no-arrow">
-                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
-                        <div class="dropdown-header">Dropdown Header:</div>
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
-                    </div> -->
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">
@@ -186,7 +157,7 @@
                             <th>ID</th>
                             <th>Book Name</th>
                             <th>Author</th>
-                            <th>Avilable Copies</th>
+                            <th>Category</th>
                         </tr>
                     </thead>
                     <tbody id="tbody1" name="tbody1">
@@ -194,10 +165,6 @@
                     </tbody>
                 </table>
                 </div>
-                <!-- <div class="chart-area">
-                    
-                    <canvas id="myAreaChart"></canvas>
-                </div> -->
                         
                 </div>
             </div>
@@ -211,19 +178,6 @@
                 <div class="col-auto">
                       <i class="fas fa-user fa-1x text-gray-300"></i>
                     </div>
-                    <!-- dropdown in right conner -->
-                    <!-- <div class="dropdown no-arrow">
-                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
-                        <div class="dropdown-header">Dropdown Header:</div>
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
-                    </div> -->
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">
@@ -273,11 +227,11 @@
                                     {{$error}}
                                 </div>
                             @endforeach
-                        @endif
+                          @endif
                             <div class="form-group row">
                             <div class="form-group col-sm-5">
                               <div class="row">
-                              Book ID: <input type="text" class="form-control form-control-sm" placeholder="@id" name="bid" id="bid">
+                              Book ID: <input type="text" class="form-control form-control-sm" placeholder="@id" name="bookId" id="bookId">
                               </div>
                               <div class="row">
                               Book Name: <input type="text" class="form-control form-control-sm" placeholder="@BookName" name="bname" id="bname">
@@ -286,13 +240,13 @@
                               Author: <input type="text" class="form-control form-control-sm" placeholder="@Author" name="bauthor" id="bauthor">
                               </div>
                               <div class="row">
-                              Avilable copies: <input type="text" class="form-control form-control-sm" placeholder="@no" name="bno" id="bno">
+                              Category: <input type="text" class="form-control form-control-sm" placeholder="@no" name="bno" id="bno">
                               </div>
                             </div>
                             <div class="form-group col-sm-1" ></div>
                             <div class="form-group col-sm-5">
                             <div class="row">
-                              Member ID: <input type="text" class="form-control form-control-sm" placeholder="@id" name="mid" id="mid">
+                              Member ID: <input type="text" class="form-control form-control-sm" placeholder="@id" name="MemberID" id="MemberID">
                               </div>
                               <div class="row">
                               Member Name: <input type="text" class="form-control form-control-sm" placeholder="@memberName" name="mname" id="mname">
@@ -305,197 +259,12 @@
                         </div> 
                       </div>
                     </div>
-                    
                   </div>
                 </div>
               </div>
             </div>
 
-            <!-- Total Books
-            <div class="col-xl-6 col-md-6 mb-4">
-              <div class="card border-left-primary shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Total Books</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">5500</div> 
 
-                    </div>
-                    
-                  </div>
-                </div>
-              </div>
-            </div> -->
-
-            <!-- Available Books
-            <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-success shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Available Books</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">3000</div>
-                    </div>
-                    <div class="col-auto">
-                      <i class="fas fa-book fa-2x text-gray-300"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div> -->
-
-           
-
-            <!-- Overdued Books -->
-            <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-warning shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Overdued Books</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">22</div>
-                    </div>
-                    <div class="col-auto">
-                      <i class="fas fa-book fa-2x text-gray-300"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Content Row -->
-
-          <div class="row">
-
-            <!-- Area Chart -->
-            <div class="col-xl-12 col-lg-7">
-              <div class="card shadow mb-4">
-                <!-- Card Header - Dropdown -->
-                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary">Recent Notices</h6>
-                  <div class="dropdown no-arrow">
-                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
-                      <div class="dropdown-header">Dropdown Header:</div>
-                      <a class="dropdown-item" href="#">Action</a>
-                      <a class="dropdown-item" href="#">Another action</a>
-                      <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                  </div>
-                </div>
-                <!-- Card Body -->
-                <div class="card-body">
-                  <div class="chart-area">
-                    <canvas id="myAreaChart"></canvas>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Content Row -->
-          <div class="row">
-
-            <!-- Content Column -->
-            <div class="col-lg-6 mb-4">
-
-              <!-- Project Card Example -->
-              <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Projects</h6>
-                </div>
-                <div class="card-body">
-                  <h4 class="small font-weight-bold">Server Migration <span class="float-right">20%</span></h4>
-                  <div class="progress mb-4">
-                    <div class="progress-bar bg-danger" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                  <h4 class="small font-weight-bold">Sales Tracking <span class="float-right">40%</span></h4>
-                  <div class="progress mb-4">
-                    <div class="progress-bar bg-warning" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                  <h4 class="small font-weight-bold">Customer Database <span class="float-right">60%</span></h4>
-                  <div class="progress mb-4">
-                    <div class="progress-bar" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                  <h4 class="small font-weight-bold">Payout Details <span class="float-right">80%</span></h4>
-                  <div class="progress mb-4">
-                    <div class="progress-bar bg-info" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                  <h4 class="small font-weight-bold">Account Setup <span class="float-right">Complete!</span></h4>
-                  <div class="progress">
-                    <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-
-            <div class="col-lg-6 mb-4">
-
-              <!-- Color System -->
-              <div class="row">
-                <div class="col-lg-6 mb-4">
-                  <div class="card bg-primary text-white shadow">
-                    <div class="card-body">
-                      Primary
-                      <div class="text-white-50 small">#4e73df</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-6 mb-4">
-                  <div class="card bg-success text-white shadow">
-                    <div class="card-body">
-                      Success
-                      <div class="text-white-50 small">#1cc88a</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-6 mb-4">
-                  <div class="card bg-info text-white shadow">
-                    <div class="card-body">
-                      Info
-                      <div class="text-white-50 small">#36b9cc</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-6 mb-4">
-                  <div class="card bg-warning text-white shadow">
-                    <div class="card-body">
-                      Warning
-                      <div class="text-white-50 small">#f6c23e</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-6 mb-4">
-                  <div class="card bg-danger text-white shadow">
-                    <div class="card-body">
-                      Danger
-                      <div class="text-white-50 small">#e74a3b</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-6 mb-4">
-                  <div class="card bg-secondary text-white shadow">
-                    <div class="card-body">
-                      Secondary
-                      <div class="text-white-50 small">#858796</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-
-        </div>
-        <!-- /.container-fluid -->
-
-      </div>
-      <!-- End of Main Content -->
 
       <!-- Footer -->
       <footer class="sticky-footer bg-white">
@@ -546,7 +315,7 @@
     var col3 = currow.find('td:eq(2)').text();
     var col4 = currow.find('td:eq(3)').text();
     // var result = col1+'\n'+col2+'\n'+col3+'\n'+col4;
-    $("#bid").val(col1);
+    $("#bookId").val(col1);
     $("#bname").val(col2);
     $("#bauthor").val(col3);
     $("#bno").val(col4);
@@ -558,18 +327,10 @@
     var currow = $(this).closest('tr');
     var col1 = currow.find('td:eq(0)').text();
     var col2 = currow.find('td:eq(1)').text();
-    // var col3 = currow.find('td:eq(2)').text();
-    // var col4 = currow.find('td:eq(3)').text();
-    // var result = col1+'\n'+col2+'\n'+col3+'\n'+col4;
-    $("#mid").val(col1);
+    $("#MemberID").val(col1);
     $("#mname").val(col2);
-    // $("#bauthor").val(col3);
-    // $("#bno").val(col4);
-    // alert(result);
   })
   </script>
-
- 
 
 </body>
 
@@ -627,12 +388,6 @@ $(document).ready(function(){
 });
 </script>
 
-
-
-
-
-
-
  <script type="text/javascript">
         function makeTableScroll() {
             // Constant retrieved from server-side via JSP
@@ -670,7 +425,9 @@ $(document).ready(function(){
         }
     </script>
     
-
+    <script>
+          $('div.alert').delay(2000).slideUp(300);
+        </script>
 
  <style type="text/css">
         table {

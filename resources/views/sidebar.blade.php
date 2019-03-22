@@ -30,6 +30,8 @@
           <div class="bg-white py-2 collapse-inner rounded">
           <a class="collapse-item" href="{{ url('/borrow') }}">Lend a Book</a>
             <a class="collapse-item" href="{{ url('/return') }}">Return a Book</a>
+          <a class="collapse-item" href="{{ url('/viewborrow') }}">Borrow details</a>
+
           </div>
         </div>
       </li>
