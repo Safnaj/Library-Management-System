@@ -1,6 +1,6 @@
 <?php
 
-Route::get('/', function () {
+Route::get('/dashboard', function () {
     return view('dashboard');
 });
 
@@ -42,3 +42,9 @@ Route::get('/viewborrow', 'BrwsAndRtnsController@getBorrow');
 Route::get('/return', function () {
     return view('return');
 });
+
+/// lowdini 
+
+Auth::routes();
+
+Route::get('/', 'HomeController@index')->name('home');
