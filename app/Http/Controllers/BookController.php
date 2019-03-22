@@ -39,7 +39,7 @@ class BookController extends Controller
         return redirect('/addBook')->with('info','Book Added Successfully..!');
     }    
 
-    //Find a Particular Item using it ID
+    //Find a Particular Item using it id
     public function updateBook($id){
         $books = Book::find($id);
         $categories = Category::all();
