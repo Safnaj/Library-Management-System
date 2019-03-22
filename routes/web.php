@@ -4,6 +4,7 @@ Route::get('/', function () {
     return view('dashboard');
 });
 
+
 Route::get('/addBook', function () {
     return view('addBook');
 });
@@ -26,19 +27,3 @@ Route::get('/deleteBook/{id}', 'BookController@deleteBook');
 
 Route::post('/manageBooks/update/{id}', 'BookController@editBook');
 
-
-// from aashif
-
-Route::get('/borrow', 'BrwsAndRtnsController@index');
-
-Route::post('/insert','BrwsAndRtnsController@add');
-
-Route::get('/borrow/action', 'BrwsAndRtnsController@action')->name('borrow.action');
-
-Route::get('/borrow/searchmember', 'BrwsAndRtnsController@searchmember')->name('borrow.searchmember');
-
-Route::get('/viewborrow', 'BrwsAndRtnsController@getBorrow');
-
-Route::get('/return', function () {
-    return view('return');
-});
