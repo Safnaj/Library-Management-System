@@ -168,7 +168,7 @@
                   @if(count($books) > 0)
                       @foreach($books->all() as $book)
                       <tr>
-                          <td>{{$book->bookId}}</td>
+                          <td>{{$book->id}}</td>
                           <td>{{$book->title}}</td>                                                  
                           <td>{{$book->author}}</td>                                                  
                           <td>{{$book->category}}</td>                                                  
