@@ -15,7 +15,7 @@ class BrwsAndRtnsController extends Controller
     {
      return view('borrow');
     }
-//  add function
+
     public function add(Request $request){
       $this->validate($request, [
           'bookId' => 'required',
@@ -92,7 +92,7 @@ class BrwsAndRtnsController extends Controller
     }
 
 
-    // search member function 
+    
     function searchmember(Request $request)
     {
      if($request->ajax())
@@ -147,7 +147,6 @@ class BrwsAndRtnsController extends Controller
       echo json_encode($data);
      }
     }
-// get all books
 
    public function getBorrow(){
         $borrows = Borrow::all();
