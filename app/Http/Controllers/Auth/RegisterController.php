@@ -45,7 +45,7 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
-    //User Resgistration Validator
+    //User Resgistration Validator name email password
     protected function validator(array $data)
     {
         return Validator::make($data, [
