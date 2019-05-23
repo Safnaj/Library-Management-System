@@ -8,14 +8,14 @@ class CreateBooksTable extends Migration
 {
     
     public function up()
-    {
+    {   
+        //BookId changed to id
         Schema::create('books', function (Blueprint $table) {
-            $table->integer('bookId');
+            $table->integer('id');
             $table->string('title');
             $table->string('author');
             $table->string('category');
             $table->double('noOfCopies');
-            $table->increments('id');
             $table->timestamps();
         });
     }
