@@ -341,6 +341,9 @@
 </body>
 
 </html>
+
+
+<!-- Search Script -->
 <script>
 $(document).ready(function(){
 
@@ -394,6 +397,7 @@ $(document).ready(function(){
 });
 </script>
 
+     <!-- table 1 script -->
  <script type="text/javascript">
         function makeTableScroll() {
             // Constant retrieved from server-side via JSP
@@ -412,7 +416,7 @@ $(document).ready(function(){
         }
     </script>
 
-    
+     <!-- table 2 script -->
  <script type="text/javascript">
         function make2TableScroll() {
             // Constant retrieved from server-side via JSP
@@ -431,15 +435,18 @@ $(document).ready(function(){
         }
     </script>
     
+
+    <!-- alert script -->
     <script>
           $('div.alert').delay(2000).slideUp(300);
         </script>
 
- <style type="text/css">
-        table {
-            width:  100%;
-            border-collapse: collapse;
-        }
+<!-- popup style -->
+<style type="text/css">
+   table {
+    width:  100%;
+    border-collapse: collapse;
+   }
         td {
             border: 0px solid black;
         }
@@ -452,4 +459,4 @@ $(document).ready(function(){
                 cursor: pointer;transition: all .25s ease-in-out;
             }
             table tr:not(:first-child):hover{background-color: #ddd;}
-    </style>
+</style>
